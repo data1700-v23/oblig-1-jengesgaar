@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobillett</title>
+    <script src = "kinobillet.js"></script>
+</head>
+<body>
+
+    <h1>Bestilling av kinobiletter</h1>
+    <label>
+        Velg film
+        <select id = "film_select" >
+            <option value = "invalid">Velg film her</option>
+            <option value = "Jaws">Jaws</option>
+            <option value = "Oppenheimer">Oppenheimer</option>
+            <option value = "Return_jedi">Star wars: Return of the jedi</option>
+        </select>
+        <span id = "feil_film" style = "color: red; visibility: hidden;">Du må velge en film</span>
+    </label>
+    <br><br>
+
+    <label>
+        Antall
+        <input id = "input_antall" size = "1" type = "text">
+        <span id = "feil_antall" style = "color: red; visibility: hidden;"> Du må skrive ett antall</span>
+    </label>
+    <br><br>
+
+    <label>
+        Fornavn
+        <input id = "input_fornavn" type = "text">
+        <span id = "feil_fornavn" style = "color: red; visibility: hidden;">Du må skrive inn fornavn</span>
+    </label>
+    <br>
+
+    <label>
+        Etternavn
+        <input id = "input_etternavn">
+        <span id = "feil_etternavn" style = "color: red; visibility: hidden;">Du må skrive inn etternavn</span>
+    </label>
+    <br>
+
+    <label>
+        Telefonnr
+        <input id = "input_telefonnr">
+        <span id = "feil_telefonnr" style = "color: red; visibility: hidden;">Du må skrive inn telefonnummer</span>
+    </label>
+    <br>
+
+
+    <label>
+        Epost
+        <input id = "input_epost">
+        <span id = "feil_epost" style = "color: red; visibility: hidden;">Du må skrive inn epost</span>
+    </label>
+    <br>
+
+    <button onclick = "billett_kjopt()">Kjøp billett</button>
+    <br><br>
+
+    <h2>Alle billetter</h2>
+    <br><br>
+    <button onclick = "slett_billetter()">Slett alle billettene</button>
+    <div id = "billettregister"></div>
+
+
+
+
+</body>
+</html>
