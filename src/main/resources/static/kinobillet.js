@@ -1,24 +1,23 @@
-var film = null
-var film_feilmelding = null
+let film = null
+let film_feilmelding = null
 
-var antall = null
-var antall_feilmelding = null
+let antall = null
+let antall_feilmelding = null
 
-var fornavn = null
-var fornavn_feilmelding = null
+let fornavn = null
+let fornavn_feilmelding = null
 
-var etternavn = null
-var etternavn_feilmelding = null
+let etternavn = null
+let etternavn_feilmelding = null
 
-var telefon = null
-var telefon_feilmelding = null
+let telefon = null
+let telefon_feilmelding = null
 
-var epost = null
-var epost_feilmelding = null
+let epost = null
+let epost_feilmelding = null
 
-validasjon = true
+let billetter = [];
 
-var billetter = [];
 <!--Henter data angående billetter og videresender data til funskjoner valider() og vis_billetter()-->
 function billett_kjopt(){
 
@@ -41,18 +40,42 @@ function billett_kjopt(){
     epost_feilmelding = document.getElementById("feil_epost")
 
 
-    validasjon = valider()
+    let validasjon = valider()
 
     if (validasjon === true){
         billetter.push([fornavn+" "+ etternavn, film, telefon, epost, antall])
         vis_billetter()
+
+
+        temp_film = document.getElementById("film_select")
+        temp_film.value = "invalid"
+
+        temp_ansatt =document.getElementById("input_antall")
+        temp_ansatt.value = temp_ansatt.defaultValue
+
+        temp_fornavn =document.getElementById("input_fornavn")
+        temp_fornavn.value = temp_fornavn.defaultValue
+
+        temp_etternavn =document.getElementById("input_etternavn")
+        temp_etternavn.value = temp_etternavn.defaultValue
+
+        temp_telefon =document.getElementById("input_telefonnr")
+        temp_telefon.value = temp_telefon.defaultValue
+
+        temp_epost =document.getElementById("input_epost")
+        temp_epost.value = temp_epost.defaultValue
+
+
+
+
+
     }
 }
 
 <!--Sjekker om det er riktig input i inputfeltene-->
 function valider(){
 
-    var valid = true
+    let valid = true
 
     if (film === "invalid"){
 
@@ -98,7 +121,7 @@ function vis_billetter(){
         "<th>Navn</th><th>Film</th><th>Telefonnr</th>+<th>Epost</th>+<th>Antall</th>"+
         "</tr>"
 
-    var billettregister = document.getElementById("billettregister")
+    let billettregister = document.getElementById("billettregister")
 
     billetter.forEach(function(subarray){
         ut+="<tr>"
