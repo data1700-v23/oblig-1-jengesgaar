@@ -7,9 +7,10 @@
 </head>
 <body>
 
-    <h1>Bestilling av kinobiletter</h1>
-    <label>
+    <h1 style = "font-weight: bold">Bestilling av kinobiletter</h1>
+    <label style = "font-weight: bold">
         Velg film
+
         <select id = "film_select" >
             <option value = "invalid">Velg film her</option>
             <option value = "Jaws">Jaws</option>
@@ -17,55 +18,52 @@
             <option value = "Return_jedi">Star wars: Return of the jedi</option>
         </select>
         <span id = "feil_film" style = "color: red; visibility: hidden;">Du må velge en film</span>
-    </label>
+
+    </label> <!--Valg av film-->
     <br><br>
 
-    <label>
+    <label style = "font-weight: bold">
         Antall
         <input id = "input_antall" size = "1" type = "text">
         <span id = "feil_antall" style = "color: red; visibility: hidden;"> Du må skrive ett antall</span>
-    </label>
+    </label><!--Antall billetter-->
     <br><br>
 
-    <label>
+    <label style = "font-weight: bold">
         Fornavn
         <input id = "input_fornavn" type = "text">
         <span id = "feil_fornavn" style = "color: red; visibility: hidden;">Du må skrive inn fornavn</span>
-    </label>
+    </label><!--Fornavnet til kjøper-->
     <br>
 
-    <label>
+    <label style = "font-weight: bold">
         Etternavn
         <input id = "input_etternavn">
         <span id = "feil_etternavn" style = "color: red; visibility: hidden;">Du må skrive inn etternavn</span>
-    </label>
+    </label><!--Etternavnet til kjøper-->
     <br>
 
-    <label>
+    <label style = "font-weight: bold">
         Telefonnr
         <input id = "input_telefonnr">
         <span id = "feil_telefonnr" style = "color: red; visibility: hidden;">Du må skrive inn telefonnummer</span>
-    </label>
+    </label><!--Telefonnummer til kjøper-->
     <br>
 
-
-    <label>
+    <label style = "font-weight: bold">
         Epost
         <input id = "input_epost">
         <span id = "feil_epost" style = "color: red; visibility: hidden;">Du må skrive inn epost</span>
-    </label>
+    </label><!--Epostadresse til kjøper-->
     <br>
 
-    <button onclick = "billett_kjopt()">Kjøp billett</button>
+    <button onclick = "billett_kjopt()">Kjøp billett</button> <!--Knapp for å kjøpe billetter (registrere)-->
     <br><br>
 
-    <h2>Alle billetter</h2>
+    <h2 style = "font-weight: bold">Alle billetter</h2>
     <br><br>
-    <button onclick = "slett_billetter()">Slett alle billettene</button>
+    <button onclick = "slett_billetter()">Slett alle billettene</button> <!--Slett alle billettene-->
     <div id = "billettregister"></div>
-
-
-
 
 </body>
 </html>

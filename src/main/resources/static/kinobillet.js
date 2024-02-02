@@ -18,6 +18,8 @@ var epost_feilmelding = null
 
 validasjon = true
 
+var billetter = [];
+<!--Henter data angående billetter og videresender data til funskjoner valider() og vis_billetter()-->
 function billett_kjopt(){
 
     film = String(document.getElementById("film_select").value)
@@ -41,11 +43,13 @@ function billett_kjopt(){
 
     validasjon = valider()
 
-
-
-
+    if (validasjon === true){
+        billetter.push([fornavn+" "+ etternavn, film, telefon, epost, antall])
+        vis_billetter()
+    }
 }
 
+<!--Sjekker om det er riktig input i inputfeltene-->
 function valider(){
 
     var valid = true
@@ -88,7 +92,29 @@ function valider(){
     return valid
 }
 
+<!--Viser billetter i array. Står tomt hvis array er tomt.-->
+function vis_billetter(){
+    let ut = "<table><tr<>"+
+        "<th>Navn</th><th>Film</th><th>Telefonnr</th>+<th>Epost</th>+<th>Antall</th>"+
+        "</tr>"
 
+    var billettregister = document.getElementById("billettregister")
+
+    billetter.forEach(function(subarray){
+        ut+="<tr>"
+
+        subarray.forEach(function(item){
+            ut+="<td>"+item+"</td>"
+        })
+        ut += "</tr>"
+    })
+
+    billettregister.innerHTML = ut
+
+}
+
+<!--Tømmer array, og kjører vis_billetter()-->
 function slett_billetter(){
-
+    billetter = []
+    vis_billetter()
 }
